@@ -1,6 +1,6 @@
 import streamlit as st
 st.title("Churn Rate TELECOM")
-st.image("../img/frrh.png")
+st.image("/assets/frrh.png")
 st.markdown("""
     ### Proyecto para detectar Churn Rate en un dataset de TELECOM
     

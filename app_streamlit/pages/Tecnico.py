@@ -4,7 +4,7 @@ import numpy as np
 
 
 st.title("Metodología Técnica")
-st.image("../img/1.png")
+st.image("/assets/1.png")
 st.write("Resumen Ejecutivo del Análisis de Churn " \
 "Analisis de unos <strong>7000 clientes de nuestra operadora</strong>. La tasa de cancelación (Churn) " \
 "general es de <strong>26.32%</strong>." \

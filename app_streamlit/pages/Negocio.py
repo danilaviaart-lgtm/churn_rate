@@ -4,7 +4,7 @@ import pandas as pd
 df = pd.read_csv('../data/processed/dataset_final_grupos.csv')
 
 st.title("Analisis Negocio Churn Rate TELECOM")
-st.image("../img/complete.png")
+st.image("/assets/complete.png")
 st.markdown("""
 Para el negocio es muy improtante tener un modelo que nos ayude a detectar fugas y poder ofrecer soluciones acorde a cada cliente.
 Necesitamos generar un modelo de ML para tener una estategia `reactiva`, no esperemos que el cliente se vaya... anticipemos y ofrezcamos soluciones acorde a cada cliente.
@@ -12,7 +12,7 @@ Necesitamos generar un modelo de ML para tener una estategia `reactiva`, no espe
 
 col1, col2 = st.columns([1, 1]) # La segunda columna es el doble de ancha
 with col1:
-    st.image("../img/client.png", width=300)
+    st.image("/assets/client.png", width=300)
 with col2:
     st.markdown("""
     ## Cliente primero
@@ -27,12 +27,12 @@ with col3:
     Previsión de ingresos por cliente. Si perdemos clientes, perdemos ingresos. Localicemos posibles fugas y actuemos proactivamnete.
     """)
 with col4:
-    st.image("../img/money.png", width=300)
+    st.image("/assets/money.png", width=300)
 st.divider()
 
 col5, col6 = st.columns([1, 1]) # La segunda columna es el doble de ancha
 with col5:
-    st.image("../img/efici.png", width=300)
+    st.image("/assets/efici.png", width=300)
 with col6:
     st.markdown("""
     ## Eficiencia
@@ -49,7 +49,7 @@ with col7:
     Detectamos problemas con nuestros servicios para ofrecer mejores soluciones.            
     """)
 with col8:
-    st.image("../img/goals.png", width=300)
+    st.image("/assets/goals.png", width=300)
 
 st.divider()
 

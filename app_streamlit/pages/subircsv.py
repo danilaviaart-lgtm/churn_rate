@@ -53,7 +53,7 @@ def modal_predicciones(df, modelo):
 st.title("Subir Archivo CSV")
 col1, col2 = st.columns([1, 1]) # La segunda columna es el doble de ancha
 with col1:
-    st.image("../img/csv.png", width=300)
+    st.image("/assets/csv.png", width=300)
 with col2:
     st.write("Recuerda que sea CSV o Excel")
     archivo_subido = st.file_uploader("Elige un archivo", type=["csv", "xlsx", "xls"])

@@ -59,7 +59,7 @@ def mostrar_resultados(datos_df):
 st.title("Formulario de Retención de Clientes")
 col1, col2 = st.columns([1, 1]) # La segunda columna es el doble de ancha
 with col1:
-    st.image("../img/undraw.png", width=300)
+    st.image("/assets/undraw.png", width=300)
 with col2:
     st.markdown("""
     Puedes ingresar los detalles de tu cliente para obtener una estimación de la probabilidad de retención.
