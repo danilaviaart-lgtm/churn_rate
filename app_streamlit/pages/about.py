@@ -4,20 +4,11 @@ import os
 # Obtiene la ruta absoluta de la carpeta donde está este script
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
-# Une esa ruta con la ubicación de la imagen
-image_path = os.path.join(current_dir, "../assets", "about.png")
-
-# Verifica si el archivo existe antes de cargarlo (para evitar que la app explote)
-if os.path.exists(image_path):
-    st.image(image_path)
-else:
-    st.error(f"No se encontró la imagen en: {image_path}")
-st.title("Sobre el proyecto")
-
+img_about = os.path.join(current_dir, "../assets", "about.png")
 
 col1, col2 = st.columns([1, 1]) # La segunda columna es el doble de ancha
 with col1:
-    st.image("assets/about.png")
+    st.image(img_about)
 
 with col2:
     st.markdown("""

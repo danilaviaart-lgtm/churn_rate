@@ -1,6 +1,12 @@
 import streamlit as st
+import os
+
+# Obtiene la ruta absoluta de la carpeta donde está este script
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+img_frrh = os.path.join(current_dir, "../assets", "frrh.png")
 st.title("Churn Rate TELECOM")
-st.image("assets/frrh.png")
+st.image(img_frrh)
 st.markdown("""
     ### Proyecto para detectar Churn Rate en un dataset de TELECOM
     

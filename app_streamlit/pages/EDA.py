@@ -1,10 +1,16 @@
 import streamlit as st
 import pandas as pd
+import os
 
-df = pd.read_csv('assets/dataset_final_grupos.csv')
+# Obtiene la ruta absoluta de la carpeta donde está este script
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+img_tecnico = os.path.join(current_dir, "../assets", "tecnico.png")
+dataframe = os.path.join(current_dir, "../assets", "dataset_final_grupos.csv")
+df = pd.read_csv(dataframe)
 
 st.title("Analisis EDA Churn Rate TELECOM")
-st.image("assets/tecnico.png")
+st.image(img_tecnico)
 st.markdown("""
 "Analisis de unos **`7000 clientes de nuestra operadora`**. La tasa de cancelación (Churn)
 general es de **`26.32%`**.

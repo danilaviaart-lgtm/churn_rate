@@ -2,13 +2,20 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
+import os
+
+# Obtiene la ruta absoluta de la carpeta donde está este script
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+img_undraw = os.path.join(current_dir, "../assets", "undraw.png")
+modelofinal = os.path.join(current_dir, "../assets", "final_model.pkl")
 
 # 1. Definimos el Modal con toda la lógica de predicción dentro
 @st.dialog("Análisis de Retención de Cliente")
 def mostrar_resultados(datos_df):
     # Cargamos el modelo
     # Nota: Asegúrate de que la ruta sea correcta relativa a donde ejecutas streamlit
-        modelo_final = joblib.load('../models/final_model.pkl')
+        modelo_final = joblib.load(modelofinal)
         
         # Realizamos la predicción
         prediccion = modelo_final.predict(datos_df)
@@ -59,7 +66,7 @@ def mostrar_resultados(datos_df):
 st.title("Formulario de Retención de Clientes")
 col1, col2 = st.columns([1, 1]) # La segunda columna es el doble de ancha
 with col1:
-    st.image("assets/undraw.png", width=300)
+    st.image(img_undraw, width=300)
 with col2:
     st.markdown("""
     Puedes ingresar los detalles de tu cliente para obtener una estimación de la probabilidad de retención.

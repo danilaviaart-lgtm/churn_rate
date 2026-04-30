@@ -2,6 +2,13 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os
+# Obtiene la ruta absoluta de la carpeta donde está este script
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+img_csv = os.path.join(current_dir, "../assets", "csv.png")
+final_model = os.path.join(current_dir, "../assets", "final_model.pkl")
+datos_sinteticos = os.path.join(current_dir, "../assets", "datos_sinteticos.csv")
 
 st.set_page_config(layout="wide")
 #modal para que salga todo en ventana
@@ -53,14 +60,14 @@ def modal_predicciones(df, modelo):
 st.title("Subir Archivo CSV")
 col1, col2 = st.columns([1, 1]) # La segunda columna es el doble de ancha
 with col1:
-    st.image("assets/csv.png", width=300)
+    st.image(img_csv, width=300)
 with col2:
     st.write("Recuerda que sea CSV o Excel")
     archivo_subido = st.file_uploader("Elige un archivo", type=["csv", "xlsx", "xls"])
     st.write("Si prefieres, puedes descargar un archivo sintentico de prueba")
     st.download_button(
         label="Descargar archivo de prueba",
-        data=pd.read_csv('assets/datos_sinteticos.csv').to_csv(index=False).encode('utf-8'),
+        data=pd.read_csv(datos_sinteticos).to_csv(index=False).encode('utf-8'),
         file_name="dataset_sintetico.csv",
         mime="text/csv",
         use_container_width=True
@@ -80,7 +87,7 @@ if archivo_subido is not None:
 
     @st.cache_resource
     def cargar_modelo():
-        return joblib.load("assets/final_model.pkl") 
+        return joblib.load(final_model) 
 
     # Cargamos el modelo
     modelo = cargar_modelo()

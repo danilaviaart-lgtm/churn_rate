@@ -1,10 +1,14 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import os
+# Obtiene la ruta absoluta de la carpeta donde está este script
+current_dir = os.path.dirname(os.path.abspath(__file__))
 
+img_1 = os.path.join(current_dir, "../assets", "1.png")
 
 st.title("Metodología Técnica")
-st.image("assets/1.png")
+st.image(img_1)
 
 st.markdown("""
 ## 1. Preparación y Transformación de Datos 
