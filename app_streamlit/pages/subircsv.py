@@ -60,7 +60,7 @@ with col2:
     st.write("Si prefieres, puedes descargar un archivo sintentico de prueba")
     st.download_button(
         label="Descargar archivo de prueba",
-        data=pd.read_csv('../data/processed/datos_prueba_ml2.csv').to_csv(index=False).encode('utf-8'),
+        data=pd.read_csv('assets/datos_sinteticos.csv').to_csv(index=False).encode('utf-8'),
         file_name="dataset_sintetico.csv",
         mime="text/csv",
         use_container_width=True
@@ -80,7 +80,7 @@ if archivo_subido is not None:
 
     @st.cache_resource
     def cargar_modelo():
-        return joblib.load("../models/final_model.pkl") 
+        return joblib.load("assets/final_model.pkl") 
 
     # Cargamos el modelo
     modelo = cargar_modelo()
