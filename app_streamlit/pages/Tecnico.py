@@ -6,6 +6,7 @@ import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 img_1 = os.path.join(current_dir, "../assets", "1.png")
+resultados = os.path.join(current_dir, "../assets", "resultados_modelos.csv")
 
 st.title("Metodología Técnica")
 st.image(img_1)
@@ -112,7 +113,7 @@ st.markdown("""
 ## 4. Evaluación Comparativa de Modelos
 Se entrenan y evalúan cinco algoritmos bajo condiciones similares para identificar el mejor candidato:
 """)
-df = pd.read_csv('../data/processed/resultados_modelos.csv')
+df = pd.read_csv(resultados)
 st.table(df)
 
 st.markdown("""
