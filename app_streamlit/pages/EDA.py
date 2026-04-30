@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 
-df = pd.read_csv('../data/processed/dataset_final_grupos.csv')
+df = pd.read_csv('assets/dataset_final_grupos.csv')
 
 st.title("Analisis EDA Churn Rate TELECOM")
 st.image("assets/tecnico.png")
