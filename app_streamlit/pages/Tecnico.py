@@ -5,12 +5,6 @@ import numpy as np
 
 st.title("Metodología Técnica")
 st.image("assets/1.png")
-st.write("Resumen Ejecutivo del Análisis de Churn " \
-"Analisis de unos <strong>7000 clientes de nuestra operadora</strong>. La tasa de cancelación (Churn) " \
-"general es de <strong>26.32%</strong>." \
-"Esto significa que más de <strong>1 de cada 4 clientes se van a la comepetencia</strong>." \
-"El análisis revela que los clientes que se dan de baja no son un grupo homogéneo." \
-"Existen perfiles de riesgo muy claros.", unsafe_allow_html=True)
 
 st.markdown("""
 ## 1. Preparación y Transformación de Datos 

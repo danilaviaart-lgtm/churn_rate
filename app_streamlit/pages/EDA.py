@@ -5,12 +5,13 @@ df = pd.read_csv('../data/processed/dataset_final_grupos.csv')
 
 st.title("Analisis EDA Churn Rate TELECOM")
 st.image("assets/tecnico.png")
-st.write("Resumen Ejecutivo del Análisis de Churn " \
-"Analisis de unos <strong>`7000 clientes de nuestra operadora`</strong>. La tasa de cancelación (Churn) " \
-"general es de <strong>`26.32%`</strong>." \
-"Esto significa que más de <strong>`1 de cada 4 clientes se van a la comepetencia`</strong>." \
-"El análisis revela que los clientes que se dan de baja no son un grupo homogéneo." \
-"Existen perfiles de riesgo muy claros.", unsafe_allow_html=True)
+st.markdown("""
+"Analisis de unos **`7000 clientes de nuestra operadora`**. La tasa de cancelación (Churn)
+general es de **`26.32%`**.
+Esto significa que `1 de cada 4 clientes se van a la competencia`
+El análisis revela que los clientes que se dan de baja no son un grupo homogéneo.
+Existen perfiles de riesgo muy claros.
+""")
 
 st.write("## Distribución de Fuga")
 st.bar_chart(df['Churn'].value_counts())
