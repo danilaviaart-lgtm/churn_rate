@@ -4,7 +4,7 @@ import pandas as pd
 df = pd.read_csv('../data/processed/dataset_final_grupos.csv')
 
 st.title("Analisis EDA Churn Rate TELECOM")
-st.image("/assets/tecnico.png")
+st.image("assets/tecnico.png")
 st.write("Resumen Ejecutivo del Análisis de Churn " \
 "Analisis de unos <strong>`7000 clientes de nuestra operadora`</strong>. La tasa de cancelación (Churn) " \
 "general es de <strong>`26.32%`</strong>." \
