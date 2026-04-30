@@ -6,13 +6,18 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 
 img_frrh = os.path.join(current_dir, "../assets", "frrh.png")
 st.title("Churn Rate TELECOM")
-st.image(img_frrh)
-st.markdown("""
+col1, col2 = st.columns([1, 1]) # La segunda columna es el doble de ancha
+with col1:
+    st.write("")
+    st.image(img_frrh)
+with col2:
+    st.markdown("""
     ### Proyecto para detectar Churn Rate en un dataset de TELECOM
-    
-    Esta plataforma utiliza modelos de **Machine Learning** en tiempo real para analizar el comportamiento 
+    Esta plataforma utiliza modelos de **`Machine Learning`** en tiempo real para analizar el comportamiento 
     de nuestra base de usuarios. Puedes subir un CSV o usar el formulario.
-    La metodología esta dividida entre
+    """)
+st.divider()
+st.markdown("""
     * **EDA**: En esta sección encuentras un pequeño EDA del dataset
     * **Negocio**: ¿ Qué importancia tiene el MC en el Negocio ?
     * **Tecnico**: En esta seccion se muestran los pasos para el desarrollo de la metodología

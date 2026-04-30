@@ -57,7 +57,7 @@ def modal_predicciones(df, modelo):
 
 # pagina normal
 
-st.title("Subir Archivo CSV")
+st.title("Trabajar con archivos CSV o Excel")
 col1, col2 = st.columns([1, 1]) # La segunda columna es el doble de ancha
 with col1:
     st.image(img_csv, width=300)
