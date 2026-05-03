@@ -9,11 +9,16 @@ img_about = os.path.join(current_dir, "../assets", "about.png")
 col1, col2 = st.columns([1, 1]) # La segunda columna es el doble de ancha
 with col1:
     st.image(img_about)
-
 with col2:
     st.markdown("""
     Proyecto de Machine Learning sobre el analisis del Chrun Rate en un dataset de Telecom  desarrollado por `Daniel Lavía` para el Bootcamp de Data Science.
     Implementación de Machine Learning en Streamlit. 
+    """)
+    st.markdown("""
+    #### Mejoras a futuro :
+    * Segregar a los clientes por % de probabilidad con más variables, para no ser tan binario en 0 y 1.
+    * Mejoras junto a Negocio de opciones en descuentos y servicios.
+    * Mail automático con descuentos o servicios.
     """)
 st.divider()
 st.markdown("""

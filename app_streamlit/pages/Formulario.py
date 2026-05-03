@@ -8,7 +8,9 @@ import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 img_undraw = os.path.join(current_dir, "../assets", "undraw.png")
-modelofinal = os.path.join(current_dir, "../assets", "final_model.pkl")
+img_good = os.path.join(current_dir, "../assets", "good.png")
+img_sad = os.path.join(current_dir, "../assets", "sad.png")
+modelofinal = os.path.join(current_dir, "../../models", "final_model.pkl")
 
 # 1. Definimos el Modal con toda la lógica de predicción dentro
 @st.dialog("Análisis de Retención de Cliente")
@@ -26,42 +28,40 @@ def mostrar_resultados(datos_df):
         monthly_charges = datos_df['MonthlyCharges'].iloc[0]
         contract = datos_df['Contract'].iloc[0]
 
-        def categorizar_gasto(cargos):
-            if cargos < 20:
-                return f"Bajo (${cargos})"
-            elif 20 <= cargos < 50:
-                return f"Medio (${cargos})"
-            else:
-                return f"Alto (${cargos})"
-        
-        clasificacion = categorizar_gasto(monthly_charges)
-
         # Mostrar resultados en el Modal
-        st.write(f"### Nivel de Gasto: {clasificacion}")
-        
-        if churn_prob <= 0.25:
-            st.success(f"## **Riesgo Bajo:** {churn_prob:.2%}")
-            if contract != "Month-to-month":
-                st.info("**Acción:** El cliente tiene poco riesgo de irse y ya cuenta con contrato anual.")
+        print(prediccion)
+        st.write(f"## **Probabilidad de Riesgo:** {churn_prob:.2f}%")
+        if prediccion == 1:
+            st.image(img_sad, width=300)
+            st.error("## **Probabilidad de Riesgo:** ALTA")
+            if contract == "Month-to-month":
+                if monthly_charges > 30:
+                    st.info("**Acción:** El cliente tiene ALTO riesgo de irse. Su pago mensual es alto y no tiene contrato anual. Ofrece un descuento 30% si se pasa al plan anual.")
+                else:
+                    st.info("**Acción:** El cliente tiene ALTO riesgo de irse. Su pago mensual es bajo y no tiene contrato anual. Ofrece un descuento 20% si se pasa al plan anual y un servicio gratis.")
             else:
-                st.info("**Acción:** Intentar pasar al cliente a contrato anual con servicios adicionales.")
+                if monthly_charges > 30:
+                    st.info("**Acción:** El cliente tiene ALTO riesgo de irse. Su pago mensual es alto y tiene contrato anual. Ofrece un descuento 30% y un servicio gratis.")
+                else:
+                    st.info("**Acción:** El cliente tiene ALTO riesgo de irse. Su pago mensual es bajo y tiene contrato anual. Ofrece un descuento 20%")        
             
-        elif 0.25 < churn_prob <= 0.75:
-            st.warning(f"## **Riesgo Medio:** {churn_prob:.2%}")
-            if contract != "Month-to-month":
-                st.info("**Acción:** Ofrecer al cliente un descuento del 10% o 20%.")
-            else:    
-                st.info("**Acción:** Ofrecer descuento preventivo (10-15%) o beneficios de lealtad.")
-
         else:
-            st.error(f"## **Riesgo Alto:** {churn_prob:.2%}")
-            if contract != "Month-to-month":
-                st.info("**Acción:** Alerta crítica. Ofrecer descuento agresivo (50%+) ya que tiene contrato anual.")
+            st.image(img_good, width=300)
+            st.success("## **Probabilidad de Riesgo:** BAJA")
+            if contract == "Month-to-month":
+                if monthly_charges > 30:
+                    st.info("**Acción:** El cliente tiene BAJO riesgo de irse. Su pago mensual es alto y no tiene contrato anual.")
+                else:
+                    st.info("**Acción:** El cliente tiene BAJO riesgo de irse. Su pago mensual es bajo y no tiene contrato anual.")
             else:
-                st.info("**Acción:** Alerta crítica. Ofrecer descuento agresivo (35%+) y cambio a contrato ANUAL.")
-
-        if st.button("Cerrar"):
-            st.rerun()
+                if monthly_charges > 30:
+                    st.info("**Acción:** El cliente tiene BAJO riesgo de irse. Su pago mensual es alto y tiene contrato anual.")
+                else:
+                    st.info("**Acción:** El cliente tiene BAJO riesgo de irse. Su pago mensual es bajo y tiene contrato anual.")                     
+            
+            
+            if st.button("Cerrar"):
+                st.rerun()
 
 st.title("Formulario de Retención de Clientes")
 col1, col2 = st.columns([1, 1]) # La segunda columna es el doble de ancha

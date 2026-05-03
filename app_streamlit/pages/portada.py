@@ -18,9 +18,14 @@ with col2:
     """)
 st.divider()
 st.markdown("""
-    * **EDA**: En esta sección encuentras un pequeño EDA del dataset
+* **Fórmula:**
+    `(Clientes perdidos en el periodo / Clientes totales al inicio del periodo) x 100`
+""")
+
+st.markdown("""
+    * **EDA**: en esta sección encuentras un pequeño EDA del dataset
     * **Negocio**: ¿ Qué importancia tiene el MC en el Negocio ?
-    * **Tecnico**: En esta seccion se muestran los pasos para el desarrollo de la metodología
+    * **Técnico**: En esta sección se muestran los pasos para el desarrollo de la metodología
     * **Formulario**: Puedes ingresar los detalles de tu cliente para obtener una estimación de la probabilidad de retención.
     Tambien devolverá recomendaciones para interactuar con el cliente.
     * **Subir CSV**: Puedes ingresar un CSV para procesar más rapido tu dataset.

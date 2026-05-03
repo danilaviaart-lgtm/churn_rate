@@ -7,8 +7,8 @@ import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 img_csv = os.path.join(current_dir, "../assets", "csv.png")
-final_model = os.path.join(current_dir, "../assets", "final_model.pkl")
-datos_sinteticos = os.path.join(current_dir, "../assets", "datos_sinteticos.csv")
+final_model = os.path.join(current_dir, "../../models/", "final_model.pkl")
+datos_sinteticos = os.path.join(current_dir, "../../data/processed/", "datos_sinteticos.csv")
 
 st.set_page_config(layout="wide")
 #modal para que salga todo en ventana
@@ -16,25 +16,61 @@ st.set_page_config(layout="wide")
 def modal_predicciones(df, modelo):
     # Realizar la predicción
     predicciones = modelo.predict(df)
-    
+    porcentaje = (predicciones.sum() / len(predicciones)) * 100
+    # Agregar las predicciones al DataFrame
     # si la devuelve que la calcule medias
     if hasattr(modelo, "predict_proba"):
         df['Probabilidad_%'] = (modelo.predict_proba(df)[:, 1] * 100).round(2)
-        
         #media de probabilidad para mostrarla
         media_prob = df['Probabilidad_%'].mean()
-        st.metric(label="Media de Probabilidad de Churn", value=f"{media_prob:.2f}%")
+        df['Prevision'] = predicciones
+        #st.metric(label="Media de Probabilidad de Churn", value=f"{media_prob:.2f}%")
+        st.metric(label="Media de clientes que se quieren ir :", value=f"{porcentaje:.2f}%")
         st.divider()
 
     # logica de segmentacion
     def categorizar(dinero):
         if dinero < 20:
-            return "Cliente importe bajo no ofrecere descuento"
+            return "BAJO"
         elif 30 <= dinero < 70:
-            return "Cliente importe medio no ofrecere descuento sin cambiar de contrato"
+            return "MEDIO"
         else:
-            return "Cliente que ofrecemos descuento si o si"
+            return "ALTO"
+        
+   # logica de descuentos
+    def asignar_accion(fila):
+        predic = fila['Prevision']
+        contrato = fila['Contract']
+        pago = fila['MonthlyCharges']
+
+        if predic == 1:
+            if contrato == "Month-to-month":
+                if pago > 30:
+                    return "Acción: El cliente tiene ALTO riesgo de irse. Su pago mensual es alto y no tiene contrato anual. Ofrece un descuento 30% si se pasa al plan anual."
+                else:
+                    return  "Acción: El cliente tiene ALTO riesgo de irse. Su pago mensual es bajo y no tiene contrato anual. Ofrece un descuento 20% si se pasa al plan anual y un servicio gratis."
+            else:
+                if pago > 30:
+                    return "Acción: El cliente tiene ALTO riesgo de irse. Su pago mensual es alto y tiene contrato anual. Ofrece un descuento 30% y un servicio gratis."
+                else:
+                    return "Acción: El cliente tiene ALTO riesgo de irse. Su pago mensual es bajo y tiene contrato anual. Ofrece un descuento 20%."        
             
+        else:
+            if contrato == "Month-to-month":
+                if pago > 30:
+                    return "Acción: El cliente tiene BAJO riesgo de irse. Su pago mensual es alto y no tiene contrato anual."
+                else:
+                    return "Acción:  El cliente tiene BAJO riesgo de irse. Su pago mensual es bajo y no tiene contrato anual."
+            else:
+                if pago > 30:
+                    return "Acción:  El cliente tiene BAJO riesgo de irse. Su pago mensual es alto y tiene contrato anual."
+                else:
+                    return "Acción:  El cliente tiene BAJO riesgo de irse. Su pago mensual es bajo y tiene contrato anual."                     
+
+    #aplicamos accion de recomendar    
+    df['Accion_Recomendada'] = df.apply(asignar_accion, axis=1)
+
+
     # Aplicamos la segmentación solo si la columna existe en el CSV
     if 'MonthlyCharges' in df.columns:
         df['Nivel_Gasto'] = df['MonthlyCharges'].apply(categorizar)

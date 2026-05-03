@@ -6,7 +6,7 @@ import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 img_1 = os.path.join(current_dir, "../assets", "1.png")
-resultados = os.path.join(current_dir, "../assets", "resultados_modelos.csv")
+resultados = os.path.join(current_dir, "../../data/processed/", "resultados_modelos.csv")
 
 st.title("Metodología Técnica")
 st.image(img_1)
@@ -46,7 +46,9 @@ num_features = ['Antiguedad', 'SeniorCitizen', 'MonthlyCharges', 'TotalCharges']
 cat_features = ['gender','Partner', 'Dependents', 'PhoneService', 'MultipleLines', 
     'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 
     'TechSupport', 'Streafrom sklearn.model_selection import cross_val_scoremingTV', 'StreamingMovies', 'Contract', 
-    'PaperlessBilling', 'PaymentMethod']"""
+    'PaperlessBilling', 'PaymentMethod']
+log_features = ['TotalCharges','MonthlyCharges']
+"""
 st.code(codigo3)
 st.markdown("""
 * **Segmentación de Features:**
@@ -59,10 +61,14 @@ st.markdown("""
 ## 2. Arquitectura del Pipeline de Preprocesamiento
 Para todo el proceso se utiliza un `Pipeline` con `ColumnTransformer` para garantizar que se puede reproducir el mismo preprocesamiento en cualquier momento, asi evitando el `*data leakage*`.        
 * **Tratamiento Numérico:** Aplicación de `StandardScaler` para normalizar las escalas, asegurando que variables con rangos grandes (como `TotalCharges`) no dominen injustamente el modelo sobre otras.
+Tambine usamos np.log1p para normalizar variables con distribuciones asimétricas (como `MonthlyCharges` y `TotalCharges`).
 """)
 codigo4 = """
 pre_num = Pipeline(steps=[
     ('scaler', StandardScaler())
+pre_log = Pipeline(steps=[
+    ('logaritmico', FunctionTransformer(np.log1p, validate=True))
+])
 """
 st.code(codigo4)
             
@@ -101,11 +107,10 @@ modelos = {
 }"""
 st.code(codigo7)
 st.markdown("""
-Como parte de modelo no supervisado usamos `KMeans`(configurado con 5 clústeres) para extraer características de nuestros clientes para capturar patrones de comportamiento grupal ocultos.
-Para ello se utiliza 'FeatureUnion'.
+Usamos `PCA` para curar la `Multicolinealidad` y reducir las dimensiones de las features. Lo ponemos en un 0.95% para que explique el 95% de los clientes y solo destruya un 5%. Lo tenemos directamente en el pipeline.
 """)
 codigo8 ="""
-KMeans(n_clusters=clusters, random_state=semilla, n_init='auto')
+('PCA', PCA(n_components=0.95)
 """
 st.code(codigo8)
 

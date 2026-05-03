@@ -6,7 +6,7 @@ import os
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
 img_tecnico = os.path.join(current_dir, "../assets", "tecnico.png")
-dataframe = os.path.join(current_dir, "../assets", "dataset_final_grupos.csv")
+dataframe = os.path.join(current_dir, "../../data/processed/", "dataset_final_grupos.csv")
 df = pd.read_csv(dataframe)
 
 st.title("Analisis EDA Churn Rate TELECOM")
@@ -27,7 +27,7 @@ with col11:
 st.divider()
 
 st.write("## Distribución de Fuga")
-st.bar_chart(df['Churn'].value_counts())
+st.bar_chart(df['Churn'].value_counts(),horizontal=True)
 st.divider()
 st.write("## Distribución por Contratos")
 col1, col2 = st.columns([1, 1]) # La segunda columna es el doble de ancha
@@ -109,9 +109,15 @@ with col8:
 
 st.markdown("""
 Muy atentos a los Servicios....
-* **`Género:`** No detectamos relevancia entre hombres y mujeres.
-* **`Acceso a Internet:`** Muchos clientes con Fibra Óptica se van.. hay que revisar las reseñas.
-* **`Soporte Tecnológico:`** Gran adopción del servicio, si lo usan la gente no tiende a irse.
-* **`Seguridad Online:`** El servicio de Seguridad Online funciona bien, deberíamos ofrecer este servicio para que la gente quede suscrita.     
+* #### **Género:**
+        No detectamos relevancia entre hombres y mujeres.
+* #### **Acceso a Internet:**
+        Muchos clientes con Fibra Óptica se van.. hay que revisar las reseñas.
+* #### **Soporte Tecnológico:** 
+        Gran adopción del servicio, si lo usan la gente no tiende a irse.
+* #### **Seguridad Online:**
+        El servicio de Seguridad Online funciona bien, 
+        deberíamos ofrecer este servicio para que la gente quede suscrita.     
 """)
+
 st.divider()
