@@ -18,7 +18,7 @@ with col2:
     """)
 st.divider()
 st.markdown("""
-    * **EDA**: en esta sección encuentras un pequeño EDA del dataset
+    * **EDA**: Análisis Exploratorio en Datos del DATASET TELECOM CHURN RATE
     * **Negocio**: ¿ Qué importancia tiene el MC en el Negocio ?
     * **Técnico**: En esta sección se muestran los pasos para el desarrollo de la metodología
     * **Formulario**: Puedes ingresar los detalles de tu cliente para obtener una estimación de la probabilidad de retención.
