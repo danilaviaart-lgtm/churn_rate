@@ -24,7 +24,10 @@ def mostrar_resultados(datos_df):
         prediccion = modelo_final.predict(datos_df)
         probabilidades = modelo_final.predict_proba(datos_df)
         churn_prob = probabilidades[0, 1]  # Probabilidad de la clase 1 (Churn)
-        
+
+# 3. Aplicamos tu decisión de negocio
+
+
         # Lógica de categorización de gasto
         monthly_charges = datos_df['MonthlyCharges'].iloc[0]
         contract = datos_df['Contract'].iloc[0]
@@ -32,7 +35,7 @@ def mostrar_resultados(datos_df):
         # Mostrar resultados en el Modal
         print(prediccion)
         st.write(f"## **Probabilidad de Riesgo:** {churn_prob:.2f}%")
-        if churn_prob >= 0.5:
+        if churn_prob >= 0.6:
             st.image(img_sad, width=300)
             st.error("## **Probabilidad de Riesgo:** ALTA")
             if contract == "Month-to-month":
@@ -46,7 +49,7 @@ def mostrar_resultados(datos_df):
                 else:
                     st.info("**Acción:** El cliente tiene ALTO riesgo de irse. Su pago mensual es bajo y tiene contrato anual. Ofrece un descuento 20%")        
             
-        elif 0.36 <= churn_prob < 0.50: # Corregido: elif en lugar de else if, y lógica de límites
+        elif 0.36 <= churn_prob < 0.60: # Corregido: elif en lugar de else if, y lógica de límites
             st.image(img_warning, width=300)
             st.warning("## **Probabilidad de Riesgo:** MEDIO")
             if contract == "Month-to-month":
