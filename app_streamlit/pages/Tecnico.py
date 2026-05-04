@@ -120,11 +120,8 @@ df = pd.read_csv(resultados)
 st.table(df)
 
 st.markdown("""
-* **Decisión:** Aunque el SVM(SVC) tiene mayor Recall, se selecciona la **Regresión Logística** por su excelente equilibrio entre detección de fugas (*Recall*) y velocidad de ejecución.
-### ¿Por que seleccionamos Recall?
-Seleccionamos `Recall` ya que nos permite medir la capacidad de predecir los casos positivos, que es lo que nos interesa.
-Nos interesa tener un buen recall porque queremos predecir a los clientes que se van a la competencia y no a los que se mantienen.
-Es más facil ofrecer un descuento para que un cliente se quede que buscar nuevos clientes. Capacidad de Retención.
+* **Decisión:** Elegimos **Regresión Logística** por su equilibrio y buen ROC-AUC porque mide la capacidad real del modelo para distinguir entre clases sin importar el desbalance de datos ni el umbral de decisión.
+A diferencia del Accuracy o el Recall, evalúa la calidad de la separación probabilística, asegurando que el modelo sea robusto y confiable.
 """)
 
 st.markdown("""
