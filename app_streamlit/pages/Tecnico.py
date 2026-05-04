@@ -47,7 +47,7 @@ cat_features = ['gender','Partner', 'Dependents', 'PhoneService', 'MultipleLines
     'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 
     'TechSupport', 'Streafrom sklearn.model_selection import cross_val_scoremingTV', 'StreamingMovies', 'Contract', 
     'PaperlessBilling', 'PaymentMethod']
-log_features = ['TotalCharges','MonthlyCharges']
+log_features = ['TotalCharges']
 """
 st.code(codigo3)
 st.markdown("""
@@ -61,7 +61,7 @@ st.markdown("""
 ## 2. Arquitectura del Pipeline de Preprocesamiento
 Para todo el proceso se utiliza un `Pipeline` con `ColumnTransformer` para garantizar que se puede reproducir el mismo preprocesamiento en cualquier momento, asi evitando el `*data leakage*`.        
 * **Tratamiento Numérico:** Aplicación de `StandardScaler` para normalizar las escalas, asegurando que variables con rangos grandes (como `TotalCharges`) no dominen injustamente el modelo sobre otras.
-Tambine usamos np.log1p para normalizar variables con distribuciones asimétricas (como `MonthlyCharges` y `TotalCharges`).
+Tambine usamos np.log1p para normalizar variables con distribuciones asimétricas (`TotalCharges`).
 """)
 codigo4 = """
 pre_num = Pipeline(steps=[
