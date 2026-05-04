@@ -26,7 +26,7 @@ with col11:
 
 st.divider()
 
-st.write("## 🚪 Distribución de Fuga")
+st.write("## 🚪 Distribución de Churn")
 st.bar_chart(df['Churn'].value_counts(),horizontal=True)
 st.divider()
 st.write("## 🤝 Distribución por Contratos")
