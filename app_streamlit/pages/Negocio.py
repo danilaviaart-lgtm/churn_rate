@@ -81,12 +81,12 @@ st.markdown("""
 ## 📈 Métricas para medir las "Fugas" (Recurrencia y Abandono)
 ### 🚪 Customer Churn Rate (Tasa de Cancelación de Clientes):
 
-* Qué es: El porcentaje de clientes que te abandonan en un periodo de tiempo determinado (mensual o anual).
-* Por qué importa: Es la medida exacta de tu "cubo agujereado". Si tienes 100 clientes y se van 5 este mes, tu Churn es del 5%.
+* **Qué es:** El porcentaje de clientes que te abandonan en un periodo de tiempo determinado (mensual o anual).
+* **Por qué importa:** Es la medida exacta de tu "cubo agujereado". Si tienes 100 clientes y se van 5 este mes, tu Churn es del 5%.
 
 ### 💸 Revenue Churn Rate (Tasa de Cancelación de Ingresos):
 
-* Qué es: El porcentaje de dinero que pierdes cuando los clientes se van o reducen sus compras.
+* **Qué es:** El porcentaje de dinero que pierdes cuando los clientes se van o reducen sus compras.
 
-* Por qué importa: Como decíamos, no todos los clientes son iguales. Perder 5 clientes que pagan poco duele menos que perder a 1 solo cliente que factura grandes cantidades. Esto te da la visión financiera de la fuga.
+* **Por qué importa:** Como decíamos, no todos los clientes son iguales. Perder 5 clientes que pagan poco duele menos que perder a 1 solo cliente que factura grandes cantidades. Esto te da la visión financiera de la fuga.
 """)

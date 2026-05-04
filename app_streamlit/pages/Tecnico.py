@@ -52,7 +52,7 @@ st.markdown("""
 * **Segmentación de Features:**
 
     * **Variables Numéricas (3):** `Antiguedad`, `MonthlyCharges` y `TotalCharges`.
-    * **Variables Categóricas (6):** Información general y detalles de servicios contratados (género, servicios de internet, seguridad, métodos de pago, etc.).
+    * **Variables Categóricas (7):** Información general y detalles de servicios contratados (género, servicios de internet, seguridad, métodos de pago, etc.).
 """)
 
 st.markdown("""   
