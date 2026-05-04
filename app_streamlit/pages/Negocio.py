@@ -61,7 +61,8 @@ col7, col8 = st.columns([1, 1]) # La segunda columna es el doble de ancha
 with col7:
     st.markdown("""
     #### 🛠️ El Feedback como Oportunidad
-    No debemos temer a las quejas, sino a la indiferencia. Los problemas o frustraciones que los clientes experimentan con nuestro servicio son mapas del tesoro que nos indican exactamente dónde debemos mejorar. Al mapear y analizar sistemáticamente estos "puntos de dolor", dejamos de poner parches temporales y empezamos a rediseñar soluciones estructurales. Transformar una mala experiencia en una solución definitiva no solo salva a un cliente, sino que mejora el producto para todos los demás.           
+    No debemos temer a las quejas, sino a la indiferencia. Los problemas o frustraciones que los clientes experimentan con nuestro servicio son mapas del tesoro que nos indican exactamente dónde debemos mejorar.
+    Transformar una mala experiencia en una solución definitiva no solo salva a un cliente, sino que mejora el producto para todos los demás.           
     """)
 with col8:
     st.image(img_goals, width=300)
