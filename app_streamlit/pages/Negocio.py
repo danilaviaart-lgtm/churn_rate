@@ -20,6 +20,12 @@ Para el negocio es muy importante tener un modelo que nos ayude a detectar fugas
 Necesitamos generar un modelo de ML para tener una estrategia `Proactiva`, no esperemos que el cliente se vaya... anticipemos y ofrezcamos soluciones acorde a cada cliente.
 """)
 
+st.divider()
+col20, col21, = st.columns(2)
+
+col20.metric("Volumen de Baja", "26,5%")
+col21.metric("Ingresos Mensuales Perdidos", "139,130.85€")
+st.divider()
 col1, col2 = st.columns([1, 1]) # La segunda columna es el doble de ancha
 with col1:
     st.image(img_client, width=300)
