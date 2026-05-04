@@ -59,9 +59,9 @@ def mostrar_resultados(datos_df):
                     st.info("**Acción:** El cliente tiene MEDIO riesgo de irse. Su pago mensual es bajo y no tiene contrato anual. Ofrece un 5% de descuento , plan anual y servicio gratis.")
             else:
                 if monthly_charges > 30:
-                    st.info("**Acción:** El cliente tiene MEDIO riesgo de irse. Su pago mensual es alto y tiene contrato anual.")
+                    st.info("**Acción:** El cliente tiene MEDIO riesgo de irse. Su pago mensual es alto y no tiene contrato anual. Ofrece un 5% de descuento y plan anual")
                 else:
-                    st.info("**Acción:** El cliente tiene MEDIO riesgo de irse. Su pago mensual es bajo y tiene contrato anual.")                     
+                    st.info("**Acción:** El cliente tiene MEDIO riesgo de irse. Su pago mensual es bajo y no tiene contrato anual. Ofrece un 5% de descuento y plan anual")                     
         else:
             st.image(img_good, width=300)
             st.success("## **Probabilidad de Riesgo:** BAJA")
