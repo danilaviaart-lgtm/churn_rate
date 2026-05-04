@@ -42,16 +42,16 @@ Se seleccionan las features de cada tipo, categoricas y númericas para luego po
 """)
 codigo3 = """
 # Seleccionamos las important features de cada tipo, categoricas y númericas para luego poder preprocesarlas.
-num_features = ['Antiguedad', 'SeniorCitizen', 'MonthlyCharges', 'TotalCharges']
+num_features = ['Antiguedad','MonthlyCharges', 'TotalCharges']
 cat_features = ['InternetService', 'PaymentMethod', 'Contract', 
-    'PaperlessBilling', 'OnlineSecurity', 'TechSupport']
+    'PaperlessBilling', 'OnlineSecurity', 'TechSupport', 'SeniorCitizen']
 log_features = ['TotalCharges']
 """
 st.code(codigo3)
 st.markdown("""
 * **Segmentación de Features:**
 
-    * **Variables Numéricas (4):** `Antiguedad`, `SeniorCitizen`, `MonthlyCharges` y `TotalCharges`.
+    * **Variables Numéricas (3):** `Antiguedad`, `MonthlyCharges` y `TotalCharges`.
     * **Variables Categóricas (6):** Información general y detalles de servicios contratados (género, servicios de internet, seguridad, métodos de pago, etc.).
 """)
 
