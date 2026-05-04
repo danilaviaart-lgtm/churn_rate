@@ -153,8 +153,8 @@ st.code(codigo9)
 
 st.markdown("""
             
-* **Ganador:** `C=0.1`, penalización `l1`, solver `liblinear`.
-* **Resultado:** Se logra un *CV Score* (Recall medio en validación cruzada) de **0.8089**.
+* **Ganador:** `C=0.01`, penalización `l1`, solver `liblinear`.
+* **Resultado:** Se logra un *CV Score* (Recall medio en validación cruzada) de **0.8488**.
 """)
 
 st.markdown("""
