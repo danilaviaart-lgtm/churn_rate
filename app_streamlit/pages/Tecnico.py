@@ -42,10 +42,9 @@ Se seleccionan las features de cada tipo, categoricas y númericas para luego po
 """)
 codigo3 = """
 # Seleccionamos las important features de cada tipo, categoricas y númericas para luego poder preprocesarlas.
-num_features = ['Antiguedad','MonthlyCharges', 'TotalCharges']
+num_features = ['Antiguedad','MonthlyCharges']
 cat_features = ['InternetService', 'PaymentMethod', 'Contract', 
     'PaperlessBilling', 'OnlineSecurity', 'TechSupport', 'SeniorCitizen']
-log_features = ['TotalCharges']
 """
 st.code(codigo3)
 st.markdown("""
@@ -59,7 +58,6 @@ st.markdown("""
 ## 2. 🏗️ Arquitectura del Pipeline de Preprocesamiento
 Para todo el proceso se utiliza un `Pipeline` con `ColumnTransformer` para garantizar que se puede reproducir el mismo preprocesamiento en cualquier momento, asi evitando el `*data leakage*`.        
 * **Tratamiento Numérico:** Aplicación de `StandardScaler` para evitar que unas variables "dominen" a otras, asegurando que variables con rangos grandes no dominen injustamente el modelo sobre otras.
-Tambine usamos np.log1p para normalizar variables con distribuciones asimétricas (`TotalCharges`).
 """)
 codigo4 = """
 pre_num = Pipeline(steps=[
