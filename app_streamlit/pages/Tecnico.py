@@ -41,12 +41,10 @@ st.markdown("""
 Se seleccionan las features de cada tipo, categoricas y númericas para luego poder preprocesarlas.
 """)
 codigo3 = """
-# Seleccionamos las features de cada tipo, categoricas y númericas para luego poder preprocesarlas.
+# Seleccionamos las important features de cada tipo, categoricas y númericas para luego poder preprocesarlas.
 num_features = ['Antiguedad', 'SeniorCitizen', 'MonthlyCharges', 'TotalCharges']
-cat_features = ['gender','Partner', 'Dependents', 'PhoneService', 'MultipleLines', 
-    'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 
-    'TechSupport', 'Streafrom sklearn.model_selection import cross_val_scoremingTV', 'StreamingMovies', 'Contract', 
-    'PaperlessBilling', 'PaymentMethod']
+cat_features = ['InternetService', 'PaymentMethod', 'Contract', 
+    'PaperlessBilling', 'OnlineSecurity', 'TechSupport']
 log_features = ['TotalCharges']
 """
 st.code(codigo3)
@@ -54,7 +52,7 @@ st.markdown("""
 * **Segmentación de Features:**
 
     * **Variables Numéricas (4):** `Antiguedad`, `SeniorCitizen`, `MonthlyCharges` y `TotalCharges`.
-    * **Variables Categóricas (15):** Información general y detalles de servicios contratados (género, servicios de internet, seguridad, métodos de pago, etc.).
+    * **Variables Categóricas (6):** Información general y detalles de servicios contratados (género, servicios de internet, seguridad, métodos de pago, etc.).
 """)
 
 st.markdown("""   
