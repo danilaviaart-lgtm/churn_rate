@@ -25,17 +25,23 @@ with col1:
     st.image(img_client, width=300)
 with col2:
     st.markdown("""
-    ## Cliente primero
-    Todo cliente es importante, pero algunos clientes son más importantes. No dejemos que ninguno se vaya.
+    #### El Cliente en el Centro:
+    Priorización Estratégica
+                
+    No todos los clientes impactan de la misma forma en la rentabilidad del negocio. Debemos enfocarnos en el Valor del Ciclo de Vida del Cliente (CLV). Nuestro objetivo es blindar la relación con aquellos usuarios estratégicos que sostienen la estructura de ingresos. No se trata solo de evitar que se vayan, sino de crear barreras de salida basadas en la excelencia, asegurando que nuestra propuesta de valor sea tan alta que ni siquiera se planteen buscar alternativas.
     """)
 st.divider()
 
 col3, col4 = st.columns([1, 1]) # La segunda columna es el doble de ancha
 with col3:
     st.markdown("""
-    ## Recurrencia
-    Previsión de ingresos por cliente. Si perdemos clientes, perdemos ingresos. Localicemos posibles fugas y actuemos proactivamnete.
-    """)
+    #### La Fuerza de la Recurrencia:
+    De Reactivos a Proactivos
+    
+    La previsibilidad financiera depende directamente de nuestra capacidad para retener clientes.
+                
+    Cada cliente perdido no es solo una factura menos este mes, es un agujero en la previsión de ingresos a largo plazo y un coste hundido en marketing y adquisición. Debemos abandonar la postura reactiva y utilizar los datos para anticiparnos: monitorizar el comportamiento de los usuarios, identificar señales tempranas de insatisfacción y actuar con planes de retención antes de que el cliente tome la decisión de abandonarnos.
+                    """)
 with col4:
     st.image(img_money, width=300)
 st.divider()
@@ -45,18 +51,16 @@ with col5:
     st.image(img_efici, width=300)
 with col6:
     st.markdown("""
-    ## Eficiencia
-    El tiempo es Oro, por lo tanto la eficiencia es Oro.
-    Si detectamos los clientes con más provabilidad de fuga, podemos destinar el tiempo que tenemos en lo que realmente importa. Cliente con buenos importes y que se vayan a ir.
+    #### Eficiencia Operativa
+    La eficiencia consiste en saber elegir nuestras batallas. No podemos salvar a todos los clientes con el mismo nivel de esfuerzo. Debemos cruzar dos variables críticas: Probabilidad de fuga y Valor del cliente. Al identificar a los clientes de alto impacto económico que muestran riesgo de abandono, podemos desplegar a nuestros mejores equipos y recursos de manera quirúrgica. Salvar a una gran cuenta en riesgo justifica el tiempo invertido; destinar horas a clientes de bajo valor y baja retención es un desperdicio de recursos.
     """)
 st.divider()
 
 col7, col8 = st.columns([1, 1]) # La segunda columna es el doble de ancha
 with col7:
     st.markdown("""
-    ## Pain Points
-    Detectemos nuestros puntos malos y actuemos en consecuencia.
-    Detectamos problemas con nuestros servicios para ofrecer mejores soluciones.            
+    #### El Feedback como Oportunidad
+    No debemos temer a las quejas, sino a la indiferencia. Los problemas o frustraciones que los clientes experimentan con nuestro servicio son mapas del tesoro que nos indican exactamente dónde debemos mejorar. Al mapear y analizar sistemáticamente estos "puntos de dolor", dejamos de poner parches temporales y empezamos a rediseñar soluciones estructurales. Transformar una mala experiencia en una solución definitiva no solo salva a un cliente, sino que mejora el producto para todos los demás.           
     """)
 with col8:
     st.image(img_goals, width=300)
@@ -64,9 +68,10 @@ with col8:
 st.divider()
 
 st.markdown("""
-## Reflexión :
+## Reflexión Final: El Síndrome del Cubo Agujereado
+La metáfora del cubo agujereado ilustra el error más común en el crecimiento empresarial: la obsesión por las ventas (el agua que entra) ignorando la retención (los agujeros del cubo).
 
-La metafora del cubo agujereado nos ayuda a entender los problemas de nuestro negocio.
-Jamas vamos a llenar el cubo agujereado, pero podemos entender que es lo que nos falta para llegar a la meta.
-Y asi intentar tapar esos agujeros.
+* **El esfuerzo inútil:** Gastar dinero y energía en adquirir nuevos clientes pierde todo su sentido si, una vez dentro, se escapan por la base debido a un mal servicio o falta de seguimiento.
+
+* **La solución:** El crecimiento sostenible no se logra abriendo más el grifo, sino tapando primero las fugas. Entender por qué se van nuestros clientes es el primer paso para sellar esos agujeros. Solo cuando el cubo es estanco, el esfuerzo de ventas se traduce en un crecimiento real, escalable y duradero.
 """)
