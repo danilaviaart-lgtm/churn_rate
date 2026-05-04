@@ -3,6 +3,9 @@ import pandas as pd
 import numpy as np
 
 st.set_page_config(layout="centered")
+st.set_page_config(
+    page_title="Churn Rate TELECOM",
+)
 
 pagina_inicio = st.Page("pages/portada.py", title="Inicio", icon="🏠")
 pagina_eda = st.Page("pages/EDA.py", title="EDA", icon="📊")
