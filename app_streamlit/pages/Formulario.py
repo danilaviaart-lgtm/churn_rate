@@ -63,7 +63,7 @@ def mostrar_resultados(datos_df):
             if st.button("Cerrar"):
                 st.rerun()
 
-st.title("Formulario de Retención de Clientes")
+st.title("Formulario")
 col1, col2 = st.columns([1, 1]) # La segunda columna es el doble de ancha
 with col1:
     st.image(img_undraw, width=300)
