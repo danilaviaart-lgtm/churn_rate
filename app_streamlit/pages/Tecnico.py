@@ -54,7 +54,7 @@ st.markdown("""
 * **Segmentación de Features:**
 
     * **Variables Numéricas (4):** `Antiguedad`, `SeniorCitizen`, `MonthlyCharges` y `TotalCharges`.
-    * **Variables Categóricas (15):** Información demográfica y detalles de servicios contratados (género, servicios de internet, seguridad, métodos de pago, etc.).
+    * **Variables Categóricas (15):** Información general y detalles de servicios contratados (género, servicios de internet, seguridad, métodos de pago, etc.).
 """)
 
 st.markdown("""   
@@ -74,7 +74,7 @@ st.code(codigo4)
             
 st.markdown("""
 * **Tratamiento Categórico:** Aplicación de `OneHotEncoder` con `drop='first'`. Esto convierte categorías en columnas binarias evitando la "trampa de la variable ficticia" (multicolinealidad).
-Tambien usamos `handle_unknown='ignore'` por si encontramos un valor desconocido en el test no bloquee el bucle.
+Tambien usamos `handle_unknown='ignore'` por si encontramos un valor desconocido en el test no bloque el modelo.
             """)
 codigo5 = """
 pre_cat = Pipeline(steps=[
@@ -107,7 +107,7 @@ modelos = {
 }"""
 st.code(codigo7)
 st.markdown("""
-Usamos `PCA` para curar la `Multicolinealidad` y reducir las dimensiones de las features. Lo ponemos en un 0.95% para que explique el 95% de los clientes y solo destruya un 5%. Lo tenemos directamente en el pipeline.
+Usamos `PCA` para eliminar la `Multicolinealidad` y reducir las dimensiones de las features. Lo ponemos en un 0.95% para que explique el 95% de los clientes y solo destruya un 5%. Lo insertamos directamente en el pipeline.
 """)
 codigo8 ="""
 ('PCA', PCA(n_components=0.95)
@@ -122,7 +122,7 @@ df = pd.read_csv(resultados)
 st.table(df)
 
 st.markdown("""
-* **Decisión:** Aunque el Gradient Boosting tiene mayor exactitud, se selecciona la **Regresión Logística** por su excelente equilibrio entre detección de fugas (*Recall*) y velocidad de ejecución.
+* **Decisión:** Aunque el SVM(SVC) tiene mayor Recall, se selecciona la **Regresión Logística** por su excelente equilibrio entre detección de fugas (*Recall*) y velocidad de ejecución.
 ### ¿Por que seleccionamos Recall?
 Seleccionamos `Recall` ya que nos permite medir la capacidad de predecir los casos positivos, que es lo que nos interesa.
 Nos interesa tener un buen recall porque queremos predecir a los clientes que se van a la competencia y no a los que se mantienen.
@@ -171,7 +171,7 @@ Nuestro modelo final :
 * **Salida del Modelo:** Genera la predicción binaria y la probabilidad porcentual.
 * **Variables de Salida:**
     * `Prediccion_Modelo`: Clasificación final (0 o 1).
-    * `Churn Rate`: Probabilidad exacta de que el cliente abandone el servicio.
+    * `Churn Rate`: Probabilidad de que el cliente abandone el servicio.
             
 Exportamos como `final_model.pkl` en la carpeta `models` y se aplica sobre dataset sintetico de 3000 registros generados con la librería Synthetic Data Vault (SDV).
     """)
