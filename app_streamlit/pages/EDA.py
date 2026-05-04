@@ -26,10 +26,10 @@ with col11:
 
 st.divider()
 
-st.write("## Distribución de Fuga")
+st.write("## 🚪 Distribución de Fuga")
 st.bar_chart(df['Churn'].value_counts(),horizontal=True)
 st.divider()
-st.write("## Distribución por Contratos")
+st.write("## 🤝 Distribución por Contratos")
 col1, col2 = st.columns([1, 1]) # La segunda columna es el doble de ancha
 with col1:
     contrato = df.groupby(['Contract', 'Churn']).size().unstack(fill_value=0)
@@ -46,7 +46,7 @@ with col2:
     """)
 
 st.divider()
-st.write("## ¿ Son más fieles con el tiempo ?")
+st.write("## 📄 ¿ Son más fieles con el tiempo ?")
 
 col5, col6 = st.columns([1, 1]) # La segunda columna es el doble de ancha
 with col5:
@@ -68,7 +68,7 @@ with col6:
  > **Conclusión:** Invertir en un plan de **OFERTAS ESPECIALES** sólidas durante el primer año es crucial para "asegurar" al cliente a largo plazo.
                 """)
 st.divider()
-st.write("## ¿ Cómo pagan nuestros clientes ?")
+st.write("## 💳 ¿ Cómo pagan nuestros clientes ?")
 
 col5, col6 = st.columns([1, 1]) # La segunda columna es el doble de ancha
 with col5:
@@ -85,7 +85,7 @@ with col6:
                 """)
 
 st.divider()
-st.write("## Otras Métricas")
+st.write("## 💡 Otras Métricas")
 
 col3, col4 = st.columns([1, 1]) # La segunda columna es el doble de ancha
 with col3:

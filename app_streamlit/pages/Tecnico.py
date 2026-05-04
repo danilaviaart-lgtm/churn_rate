@@ -12,7 +12,7 @@ st.title("Metodología Técnica")
 st.image(img_1)
 
 st.markdown("""
-## 1. Preparación y Transformación de Datos 
+## 1. 🛠️ Preparación y Transformación de Datos 
 El proceso comienza con la selección de un dataset de Kagle.
 Una vez lo seleccionamos hacemos una limpieza principal de : nulos, revisión outliers, duplicados, etc.
 Para rellenar las faltantes, se utilizan medias o en el caso de la Antiguedad se utiliza la divisón del `TotalCharges` por `MonthlyCharges`.
@@ -56,9 +56,9 @@ st.markdown("""
 """)
 
 st.markdown("""   
-## 2. Arquitectura del Pipeline de Preprocesamiento
+## 2. 🏗️ Arquitectura del Pipeline de Preprocesamiento
 Para todo el proceso se utiliza un `Pipeline` con `ColumnTransformer` para garantizar que se puede reproducir el mismo preprocesamiento en cualquier momento, asi evitando el `*data leakage*`.        
-* **Tratamiento Numérico:** Aplicación de `StandardScaler` para normalizar las escalas, asegurando que variables con rangos grandes (como `TotalCharges`) no dominen injustamente el modelo sobre otras.
+* **Tratamiento Numérico:** Aplicación de `StandardScaler` para evitar que unas variables "dominen" a otras, asegurando que variables con rangos grandes no dominen injustamente el modelo sobre otras.
 Tambine usamos np.log1p para normalizar variables con distribuciones asimétricas (`TotalCharges`).
 """)
 codigo4 = """
@@ -92,7 +92,7 @@ ct = ColumnTransformer(transformers=[
 st.code(codigo6)
 
 st.markdown("""
-## 3. Modelos
+## 3. 🧠 Modelos
 Se utilizan los modelos de `Regresion Logistica`, `Random Forest`, `SVM(SVC)`, `Gradient Boosting` y `K-NN` . El modelo final se entrena con `GridSearchCV` para encontrar los mejores hiperparametros.
 """)
 codigo7 ="""
@@ -113,7 +113,7 @@ codigo8 ="""
 st.code(codigo8)
 
 st.markdown("""          
-## 4. Evaluación Comparativa de Modelos
+## 4. 📊 Evaluación Comparativa de Modelos
 Se entrenan y evalúan cinco algoritmos bajo condiciones similares para identificar el mejor candidato:
 """)
 df = pd.read_csv(resultados)
@@ -128,7 +128,7 @@ Es más facil ofrecer un descuento para que un cliente se quede que buscar nuevo
 """)
 
 st.markdown("""
-## 5. Hiperparámetros (GridSearchCV)
+## 5. 🧪 Hiperparámetros (GridSearchCV)
 Con la Regresión Logística seleccionada, se realiza una búsqueda en rejilla (*Grid Search*) para maximizar el *Recall*:
 * **Parámetros probados:** Regularización `C` (fuerza), tipos de penalización (`l1`, `l2`) y diferentes algoritmos de optimización (`liblinear`, `lbfgs`).
 """)
@@ -163,7 +163,7 @@ st.markdown("""
 """)
 
 st.markdown("""
-## 6. Modelo y producción
+## 6. 🚀 Modelo y producción
             
 Nuestro modelo final :
 * **Salida del Modelo:** Genera la predicción binaria y la probabilidad porcentual.

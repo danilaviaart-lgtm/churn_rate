@@ -10,6 +10,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 img_undraw = os.path.join(current_dir, "../assets", "undraw.png")
 img_good = os.path.join(current_dir, "../assets", "good.png")
 img_sad = os.path.join(current_dir, "../assets", "sad.png")
+img_warning = os.path.join(current_dir, "../assets", "notify.png")
 modelofinal = os.path.join(current_dir, "../../models", "final_model.pkl")
 
 # 1. Definimos el Modal con toda la lógica de predicción dentro
@@ -46,7 +47,7 @@ def mostrar_resultados(datos_df):
                     st.info("**Acción:** El cliente tiene ALTO riesgo de irse. Su pago mensual es bajo y tiene contrato anual. Ofrece un descuento 20%")        
             
         elif 0.36 <= churn_prob < 0.50: # Corregido: elif en lugar de else if, y lógica de límites
-            st.image(img_good, width=300)
+            st.image(img_warning, width=300)
             st.warning("## **Probabilidad de Riesgo:** MEDIO")
             if contract == "Month-to-month":
                 if monthly_charges > 30:
