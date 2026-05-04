@@ -12,16 +12,11 @@ with col1:
     st.image(img_frrh)
 with col2:
     st.markdown("""
-    ### Proyecto para detectar Churn Rate en un dataset de TELECOM
+    ### Predicción de Churn Rate - Sector TELECOM
     Esta plataforma utiliza modelos de **`Machine Learning`** en tiempo real para analizar el comportamiento 
     de nuestra base de usuarios. Puedes subir un CSV o usar el formulario.
     """)
 st.divider()
-st.markdown("""
-* **Fórmula:**
-    `(Clientes perdidos en el periodo / Clientes totales al inicio del periodo) x 100`
-""")
-
 st.markdown("""
     * **EDA**: en esta sección encuentras un pequeño EDA del dataset
     * **Negocio**: ¿ Qué importancia tiene el MC en el Negocio ?
