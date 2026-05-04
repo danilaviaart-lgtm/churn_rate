@@ -50,7 +50,7 @@ st.code(codigo3)
 st.markdown("""
 * **Segmentación de Features:**
 
-    * **Variables Numéricas (3):** `Antiguedad`, `MonthlyCharges` y `TotalCharges`.
+    * **Variables Numéricas (3):** `Antiguedad`, `MonthlyCharges`.
     * **Variables Categóricas (7):** Información general y detalles de servicios contratados (género, servicios de internet, seguridad, métodos de pago, etc.).
 """)
 
@@ -64,7 +64,7 @@ pre_num = Pipeline(steps=[
     ('scaler', StandardScaler())
 pre_log = Pipeline(steps=[
     ('logaritmico', FunctionTransformer(np.log1p, validate=True))
-])
+])# Al Eliminar TotalCharges se elimina la multicolinealidad
 """
 st.code(codigo4)
             
