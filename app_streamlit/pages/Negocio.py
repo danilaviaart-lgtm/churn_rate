@@ -40,7 +40,8 @@ with col3:
     
     La previsibilidad financiera depende directamente de nuestra capacidad para retener clientes.
                 
-    Cada cliente perdido no es solo una factura menos este mes, es un agujero en la previsión de ingresos a largo plazo y un coste hundido en marketing y adquisición. Debemos abandonar la postura reactiva y utilizar los datos para anticiparnos: monitorizar el comportamiento de los usuarios, identificar señales tempranas de insatisfacción y actuar con planes de retención antes de que el cliente tome la decisión de abandonarnos.
+    Cada cliente perdido no es solo una factura menos este mes, es un agujero en la previsión de ingresos a largo plazo y un coste hundido en marketing y adquisición. 
+    Debemos abandonar la postura reactiva y utilizar los datos para anticiparnos: monitorizar el comportamiento de los usuarios, identificar señales tempranas de insatisfacción y actuar con planes de retención antes de que el cliente tome la decisión de abandonarnos.
                     """)
 with col4:
     st.image(img_money, width=300)
@@ -66,6 +67,21 @@ with col8:
     st.image(img_goals, width=300)
 
 st.divider()
+
+st.markdown("""
+## Métricas para medir las "Fugas" (Recurrencia y Abandono)
+### Customer Churn Rate (Tasa de Cancelación de Clientes):
+
+* Qué es: El porcentaje de clientes que te abandonan en un periodo de tiempo determinado (mensual o anual).
+* Por qué importa: Es la medida exacta de tu "cubo agujereado". Si tienes 100 clientes y se van 5 este mes, tu Churn es del 5%.
+
+### Revenue Churn Rate (Tasa de Cancelación de Ingresos):
+
+* Qué es: El porcentaje de dinero que pierdes cuando los clientes se van o reducen sus compras.
+
+* Por qué importa: Como decíamos, no todos los clientes son iguales. Perder 5 clientes que pagan poco duele menos que perder a 1 solo cliente que factura grandes cantidades. Esto te da la visión financiera de la fuga.
+""")
+
 
 st.markdown("""
 ## Reflexión Final: El Síndrome del Cubo Agujereado
