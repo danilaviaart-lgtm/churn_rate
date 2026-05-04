@@ -31,7 +31,7 @@ def mostrar_resultados(datos_df):
         # Mostrar resultados en el Modal
         print(prediccion)
         st.write(f"## **Probabilidad de Riesgo:** {churn_prob:.2f}%")
-        if prediccion == 1:
+        if churn_prob >= 0.6:
             st.image(img_sad, width=300)
             st.error("## **Probabilidad de Riesgo:** ALTA")
             if contract == "Month-to-month":
@@ -45,6 +45,19 @@ def mostrar_resultados(datos_df):
                 else:
                     st.info("**Acción:** El cliente tiene ALTO riesgo de irse. Su pago mensual es bajo y tiene contrato anual. Ofrece un descuento 20%")        
             
+        elif 0.4 <= churn_prob < 0.6: # Corregido: elif en lugar de else if, y lógica de límites
+            st.image(img_good, width=300)
+            st.warning("## **Probabilidad de Riesgo:** MEDIO")
+            if contract == "Month-to-month":
+                if monthly_charges > 30:
+                    st.info("**Acción:** El cliente tiene MEDIO riesgo de irse. Su pago mensual es alto y no tiene contrato anual. Ofrece un 15% de descuento y plan anual")
+                else:
+                    st.info("**Acción:** El cliente tiene MEDIO riesgo de irse. Su pago mensual es bajo y no tiene contrato anual. Ofrece un 5% de descuento , plan anual y servicio gratis.")
+            else:
+                if monthly_charges > 30:
+                    st.info("**Acción:** El cliente tiene MEDIO riesgo de irse. Su pago mensual es alto y tiene contrato anual.")
+                else:
+                    st.info("**Acción:** El cliente tiene MEDIO riesgo de irse. Su pago mensual es bajo y tiene contrato anual.")                     
         else:
             st.image(img_good, width=300)
             st.success("## **Probabilidad de Riesgo:** BAJA")
@@ -57,10 +70,9 @@ def mostrar_resultados(datos_df):
                 if monthly_charges > 30:
                     st.info("**Acción:** El cliente tiene BAJO riesgo de irse. Su pago mensual es alto y tiene contrato anual.")
                 else:
-                    st.info("**Acción:** El cliente tiene BAJO riesgo de irse. Su pago mensual es bajo y tiene contrato anual.")                     
+                    st.info("**Acción:** El cliente tiene BAJO riesgo de irse. Su pago mensual es bajo y tiene contrato anual.")                
             
-            
-            if st.button("Cerrar"):
+        if st.button("Cerrar"):
                 st.rerun()
 
 st.title("Formulario")
