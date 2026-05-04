@@ -67,6 +67,15 @@ with col8:
     st.image(img_goals, width=300)
 
 st.divider()
+st.markdown("""
+## Reflexión: El Síndrome del Cubo Agujereado
+La metáfora del cubo agujereado ilustra el error más común en el crecimiento empresarial: la obsesión por las ventas (el agua que entra) ignorando la retención (los agujeros del cubo).
+
+* **El esfuerzo inútil:** Gastar dinero y energía en adquirir nuevos clientes pierde todo su sentido si, una vez dentro, se escapan por la base debido a un mal servicio o falta de seguimiento.
+
+* **La solución:** El crecimiento sostenible no se logra abriendo más el grifo, sino tapando primero las fugas. Entender por qué se van nuestros clientes es el primer paso para sellar esos agujeros. Solo cuando el cubo es estanco, el esfuerzo de ventas se traduce en un crecimiento real, escalable y duradero.
+""")
+st.divider()
 
 st.markdown("""
 ## Métricas para medir las "Fugas" (Recurrencia y Abandono)
@@ -80,14 +89,4 @@ st.markdown("""
 * Qué es: El porcentaje de dinero que pierdes cuando los clientes se van o reducen sus compras.
 
 * Por qué importa: Como decíamos, no todos los clientes son iguales. Perder 5 clientes que pagan poco duele menos que perder a 1 solo cliente que factura grandes cantidades. Esto te da la visión financiera de la fuga.
-""")
-
-
-st.markdown("""
-## Reflexión Final: El Síndrome del Cubo Agujereado
-La metáfora del cubo agujereado ilustra el error más común en el crecimiento empresarial: la obsesión por las ventas (el agua que entra) ignorando la retención (los agujeros del cubo).
-
-* **El esfuerzo inútil:** Gastar dinero y energía en adquirir nuevos clientes pierde todo su sentido si, una vez dentro, se escapan por la base debido a un mal servicio o falta de seguimiento.
-
-* **La solución:** El crecimiento sostenible no se logra abriendo más el grifo, sino tapando primero las fugas. Entender por qué se van nuestros clientes es el primer paso para sellar esos agujeros. Solo cuando el cubo es estanco, el esfuerzo de ventas se traduce en un crecimiento real, escalable y duradero.
 """)
