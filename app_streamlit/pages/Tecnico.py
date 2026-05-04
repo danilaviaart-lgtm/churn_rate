@@ -171,7 +171,7 @@ Nuestro modelo final :
 * **Salida del Modelo:** Genera la predicción binaria y la probabilidad porcentual.
 * **Variables de Salida:**
     * `Prediccion_Modelo`: Clasificación final (0 o 1).
-    * `Crush Rate`: Probabilidad exacta de que el cliente abandone el servicio.
+    * `Churn Rate`: Probabilidad exacta de que el cliente abandone el servicio.
             
 Exportamos como `final_model.pkl` en la carpeta `models` y se aplica sobre dataset sintetico de 3000 registros generados con la librería Synthetic Data Vault (SDV).
     """)
