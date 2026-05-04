@@ -28,7 +28,7 @@ with col2:
     #### 👑 El Cliente en el Centro:
     Priorización Estratégica
                 
-    No todos los clientes impactan de la misma forma en la rentabilidad del negocio. Debemos enfocarnos en el Valor del Ciclo de Vida del Cliente (CLV). Nuestro objetivo es blindar la relación con aquellos usuarios estratégicos que sostienen la estructura de ingresos. No se trata solo de evitar que se vayan, sino de crear barreras de salida basadas en la excelencia, asegurando que nuestra propuesta de valor sea tan alta que ni siquiera se planteen buscar alternativas.
+    No todos los clientes impactan de la misma forma en la rentabilidad del negocio. Nuestro objetivo es blindar la relación con aquellos usuarios estratégicos que sostienen la estructura de ingresos. No se trata solo de evitar que se vayan, sino de crear barreras de salida basadas en la excelencia, asegurando que nuestra propuesta de valor sea tan alta que ni siquiera se planteen buscar alternativas.
     """)
 st.divider()
 
